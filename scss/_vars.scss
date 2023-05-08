@@ -1,0 +1,54 @@
+$color_default: #050215;
+$color_active: #B4977B;
+$color_white: #fff;
+$button_border-radius: 50px;
+$slider_border-radius: 2px;
+$maxWidth: 1920;
+
+@mixin adaptive_property($property, $desctopSize, $mobailSize) {
+    $differenceSize: $desctopSize - $mobailSize;
+    $differenceMobailSize: $differenceSize + $differenceSize * 0.7;
+
+    // @media (max-width: 768px) {
+    //     #{$property}: calc(#{$mobailSize + 'px'} + #{$differenceMobailSize} * ((100vw - 320px) / #{$maxWidth}));
+    // }
+
+    @media (min-width: 768px) {
+        #{$property}: calc(#{$mobailSize + 'px'} + #{$differenceSize} * (100vw / #{$maxWidth}));
+    }
+}
+
+%button_base { 
+    display: block;
+    padding: 14px 32px;
+    color: $color_white;
+    background: $color_active;
+    border: 1px solid $color_active;
+    border-radius: $button_border-radius;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        color: $color_active;
+    }
+}
+
+%link {
+    color: $color_default;
+    transition: color 0.3s ease;
+
+    &:focus, &:hover, &.active {
+        color: $color_active;
+    }
+}
+
+%progress_bar-item {
+    height: 16.6667%;
+    width: 4px;
+    background: $color_active;
+    opacity: 0;
+    border-radius: $slider_border-radius;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}

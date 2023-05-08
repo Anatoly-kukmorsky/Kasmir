@@ -1,0 +1,45 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a[class], a:not([class]) {
+    text-decoration: none;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+button, input[type="submit"] {
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5, h6, span {
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul {
+    display: inline-flex;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,54 @@
+// header start
+.header {
+    position: fixed;
+    right: 8.54%;
+    top: 0;
+    width: 33.85%;
+    z-index: 1;
+}
+
+.nav {
+    @include adaptive_property(padding-top, 60, 15);
+    @include adaptive_property(column-gap, 20, 10);
+}
+
+.menu {
+    width: 520px;
+}
+
+.link {
+    @extend %link;
+}
+
+.nav_link {
+    @include adaptive_property(font-size, 18, 14);
+    font-weight: 400;
+    line-height: 1.222;
+
+    &.active {
+        color: $color_active;
+    }
+}
+
+.nav_cart {
+    position: relative;
+}
+
+.nav_cart-image {
+    min-width: 18px;
+}
+
+.nav__cart-amount {
+    position: absolute;
+    right: -37.5%;
+    top: -30%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $color_default;
+    font-weight: 700;
+    font-size: 7px;
+    line-height: 1;
+    color: $color_white;  
+}
+// header end
